@@ -28,14 +28,12 @@ public class WISERManage {
 	/**
 	 * 日志管理类
 	 */
-	@Inject
-    WISERLogManage logManger;
+	@Inject WISERLogManage			logManger;
 
 	/**
 	 * Toast管理类
 	 */
-	@Inject
-    WISERToastManage toastManger;
+	@Inject WISERToastManage		toastManger;
 
 	/**
 	 * 线程管理类
@@ -45,16 +43,14 @@ public class WISERManage {
 	/**
 	 * Biz管理类
 	 */
-	@Inject
-    WISERBizManage bizManage;
+	@Inject WISERBizManage			bizManage;
 
 	/**
 	 * Activity管理类
 	 */
-	@Inject
-    WISERActivityManage activityManage;
+	@Inject WISERActivityManage		activityManage;
 
-	@Inject public WISERDisplay display;
+	@Inject public WISERDisplay		display;
 
 	/**
 	 * 线程管理
@@ -64,30 +60,26 @@ public class WISERManage {
 	/**
 	 * 权限管理
 	 */
-	@Inject
-    WISERPermissionManage permissionManage;
+	@Inject WISERPermissionManage	permissionManage;
 
 	/**
 	 * 文件管理
 	 */
-	@Inject
-    WISERFileCacheManage fileCacheManage;
+	@Inject WISERFileCacheManage	fileCacheManage;
 
 	/**
 	 * jobService服务管理
 	 */
-	@Inject
-    WISERJobServiceManage jobServiceManage;
+	@Inject WISERJobServiceManage	jobServiceManage;
 
 	/**
 	 * 方法代理
 	 */
 	@Inject WISERMethodManage		methodManage;
 
-	@Inject
-    WISERUIManage uiManage;
+	@Inject WISERUIManage			uiManage;
 
-	private Application application;
+	private Application				application;
 
 	public WISERManage() {}
 
