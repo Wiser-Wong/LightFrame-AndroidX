@@ -384,21 +384,30 @@ public class WISERDisplay implements IWISERDisplay {
 		if (activity() == null) return;
 		if (fragment == null) return;
 		if (srcFragment == null) return;
-		srcFragment.getChildFragmentManager().beginTransaction().replace(id, fragment, fragment.getClass().getName()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+		srcFragment.getChildFragmentManager().beginTransaction().replace(id, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+				.commitAllowingStateLoss();
+	}
+
+	@Override
+	public void commitChildReplace(Fragment srcFragment, int id, Fragment fragment, String tag) {
+		if (activity() == null) return;
+		if (fragment == null) return;
+		if (srcFragment == null) return;
+		srcFragment.getChildFragmentManager().beginTransaction().replace(id, fragment, tag).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 				.commitAllowingStateLoss();
 	}
 
 	@Override public void commitBackStack(@IdRes int id, Fragment fragment) {
 		if (activity() == null) return;
 		if (fragment == null) return;
-		activity().getSupportFragmentManager().beginTransaction().add(id, fragment, fragment.getClass().getName()).addToBackStack(fragment.getClass().getName())
+		activity().getSupportFragmentManager().beginTransaction().add(id, fragment).addToBackStack(null)
 				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commitAllowingStateLoss();
 	}
 
-	@Override public void commitBackStack(int id, Fragment fragment, String tag) {
+	@Override public void commitBackStack(@IdRes int id, Fragment fragment, String tag) {
 		if (activity() == null) return;
 		if (fragment == null) return;
-		activity().getSupportFragmentManager().beginTransaction().add(id, fragment, tag).addToBackStack(fragment.getClass().getName()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+		activity().getSupportFragmentManager().beginTransaction().add(id, fragment, tag).addToBackStack(tag).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 				.commitAllowingStateLoss();
 	}
 

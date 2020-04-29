@@ -707,14 +707,8 @@ public class WISERApp {
 	}
 
 	/**
-	 * 获取虚拟按键的高度
-	 * 1. 全面屏下
-	 * 1.1 开启全面屏开关-返回0
-	 * 1.2 关闭全面屏开关-执行非全面屏下处理方式
-	 * 2. 非全面屏下
-	 * 2.1 没有虚拟键-返回0
-	 * 2.1 虚拟键隐藏-返回0
-	 * 2.2 虚拟键存在且未隐藏-返回虚拟键实际高度
+	 * 获取虚拟按键的高度 1. 全面屏下 1.1 开启全面屏开关-返回0 1.2 关闭全面屏开关-执行非全面屏下处理方式 2. 非全面屏下 2.1
+	 * 没有虚拟键-返回0 2.1 虚拟键隐藏-返回0 2.2 虚拟键存在且未隐藏-返回虚拟键实际高度
 	 */
 	public static int getNavigationBarHeightRoom(Context context) {
 		if (navigationGestureEnabled(context)) {
@@ -724,7 +718,7 @@ public class WISERApp {
 	}
 
 	/**
-	 * 全面屏（是否开启全面屏开关 0 关闭  1 开启）
+	 * 全面屏（是否开启全面屏开关 0 关闭 1 开启）
 	 *
 	 * @param context
 	 * @return
@@ -780,7 +774,7 @@ public class WISERApp {
 	 * @return
 	 */
 	public static boolean isNavigationBarShown(Activity activity) {
-		//虚拟键的view,为空或者不可见时是隐藏状态
+		// 虚拟键的view,为空或者不可见时是隐藏状态
 		View view = activity.findViewById(android.R.id.navigationBarBackground);
 		if (view == null) {
 			return false;
