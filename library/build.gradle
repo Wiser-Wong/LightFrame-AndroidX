@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //RecycleView
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //系统状态栏
+    api 'com.readystatesoftware.systembartint:systembartint:1.0.4'
+
+    // progressbar
+    api 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
+
+    //滑动Activity删除
+    api 'com.jude:swipebackhelper:3.1.2'
+
+    //依赖注入
+    api 'com.google.dagger:dagger:2.17'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.17'
+
+    //IO
+    api 'org.apache.commons.io:commonsIO:2.5.0'
+
+    //Gson
+    api 'com.google.code.gson:gson:2.8.5'
+}

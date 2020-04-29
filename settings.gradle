@@ -1,0 +1,3 @@
+rootProject.name='LightFrame-AndroidX'
+include ':app'
+include ':library'
